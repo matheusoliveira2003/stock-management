@@ -5,16 +5,30 @@ import ListEquipmentTypeService from "../../../services/ListEquipmentTypeService
 
 @injectable()
 export default class EquipmentTypeController {
-    async listEquipmentType(
+    async list(
         request: Request,
         response: Response,
         next: NextFunction
     ): Promise<EquipmentTypeEntity[] | void> {
         try {
-            const listEquipmentTypeService = container.resolve(ListEquipmentTypeService)
-            response.json(await listEquipmentTypeService.execute());
+            response.json(
+                await container.resolve(ListEquipmentTypeService).execute()
+            );
         } catch (error) {
             next(error);
         }
     }
+
+    // async findById(
+    //     request: Request,
+    //     response: Response,
+    //     next: NextFunction
+    // ): Promise<EquipmentTypeEntity | void> {
+    //     try {
+    //         const { id } = request.params;
+    //         response.json(await container.resolve())
+    //     } catch (error) {
+    //         next(error);
+    //     }
+    // }
 }

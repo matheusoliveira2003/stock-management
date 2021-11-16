@@ -1,6 +1,10 @@
-// import { Router } from "express";
-// import equipmentTypeController from '../controllers/EquipmentTypeController';
-//
-// const equipmentTypeModule = Router();
-// const equipmentTypeController = new equipmentTypeController();
-// TODO
+import { Router } from "express";
+import EquipmentTypeController from "../controllers/EquipmentTypeController";
+
+const equipmentTypeRouter = Router();
+const equipmentTypeController = new EquipmentTypeController();
+
+equipmentTypeRouter.get('', equipmentTypeController.list);
+// equipmentTypeRouter.get(':id', equipmentTypeController.findById);
+
+export default equipmentTypeRouter;
