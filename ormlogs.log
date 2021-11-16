@@ -133,3 +133,14 @@
 [2021-11-06T13:06:51.895Z][QUERY]: SELECT `ExampleEntity`.`id_example_table` AS `ExampleEntity_id_example_table`, `ExampleEntity`.`created_at` AS `ExampleEntity_created_at`, `ExampleEntity`.`updated_at` AS `ExampleEntity_updated_at`, `ExampleEntity`.`deleted_at` AS `ExampleEntity_deleted_at` FROM `example_table` `ExampleEntity` WHERE ( `ExampleEntity`.`id_example_table` = ? ) AND ( `ExampleEntity`.`deleted_at` IS NULL ) -- PARAMETERS: [2]
 [2021-11-06T13:06:51.897Z][QUERY]: COMMIT
 [2021-11-06T13:13:28.643Z][QUERY]: SELECT `ExampleEntity`.`id_example_table` AS `ExampleEntity_id_example_table`, `ExampleEntity`.`name` AS `ExampleEntity_name`, `ExampleEntity`.`created_at` AS `ExampleEntity_created_at`, `ExampleEntity`.`updated_at` AS `ExampleEntity_updated_at`, `ExampleEntity`.`deleted_at` AS `ExampleEntity_deleted_at` FROM `example_table` `ExampleEntity` WHERE `ExampleEntity`.`deleted_at` IS NULL
+[2021-11-15T12:51:25.344Z][QUERY]: SELECT * FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA` = 'stock_management' AND `TABLE_NAME` = 'migrations'
+[2021-11-15T12:51:25.350Z][QUERY]: CREATE TABLE `migrations` (`id` int NOT NULL AUTO_INCREMENT, `timestamp` bigint NOT NULL, `name` varchar(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB
+[2021-11-15T12:51:25.883Z][QUERY]: SELECT * FROM `stock_management`.`migrations` `migrations` ORDER BY `id` DESC
+[2021-11-15T12:51:25.887Z]0 migrations are already loaded in the database.
+[2021-11-15T12:51:25.887Z]1 migrations were found in the source code.
+[2021-11-15T12:51:25.887Z]1 migrations are new migrations that needs to be executed.
+[2021-11-15T12:51:25.888Z][QUERY]: START TRANSACTION
+[2021-11-15T12:51:25.889Z][QUERY]: CREATE TABLE `example_table` (`id_example_table` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL DEFAULT now(), `updated_at` datetime NOT NULL DEFAULT now(), `deleted_at` datetime NULL, PRIMARY KEY (`id_example_table`)) ENGINE=InnoDB
+[2021-11-15T12:51:25.919Z][QUERY]: INSERT INTO `stock_management`.`migrations`(`timestamp`, `name`) VALUES (?, ?) -- PARAMETERS: [1636157284909,"stockManagementExampleMigration1636157284909"]
+[2021-11-15T12:51:25.923Z]Migration stockManagementExampleMigration1636157284909 has been executed successfully.
+[2021-11-15T12:51:25.923Z][QUERY]: COMMIT

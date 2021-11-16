@@ -4,5 +4,6 @@ import exampleModule from "../../../../modules/exampleModule/infra/http/routes/e
 const mainRouter = Router();
 
 mainRouter.use('/exampleModule', exampleModule);
+mainRouter.use('/equipment-type', exampleModule);
 
 export default mainRouter;

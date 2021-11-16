@@ -1,4 +1,3 @@
-
 export default interface IExampleDTO {
     id?: number;
     name: string;

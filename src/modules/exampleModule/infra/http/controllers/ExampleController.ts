@@ -1,6 +1,6 @@
-import ExampleEntity from "../../typeorm/entities/ExampleEntity";
+import {container, injectable} from "tsyringe";
 import {NextFunction, Request, Response} from "express";
-import {container, inject, injectable} from "tsyringe";
+import ExampleEntity from "../../typeorm/entities/ExampleEntity";
 import ListExampleService from "../../../services/ListExampleService";
 
 @injectable()
