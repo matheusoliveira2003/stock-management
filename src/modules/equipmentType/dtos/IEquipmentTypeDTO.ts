@@ -1,5 +1,5 @@
 export default interface IEquipmentTypeDTO {
-    id_sys_default_equipment_type?: number;
+    id?: number;
     type: string;
     createdAt?: Date;
     updatedAt?: Date;

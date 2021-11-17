@@ -1,6 +1,6 @@
 import { Router } from "express";
 import exampleModule from "../../../../modules/exampleModule/infra/http/routes/example.routes";
-import equipmentTypeRouter from "../../../../modules/exampleModule/infra/http/routes/equipmentType.routes";
+import equipmentTypeRouter from "../../../../modules/equipmentType/infra/http/routes/equipmentType.routes";
 
 const mainRouter = Router();
 

@@ -5,6 +5,6 @@ const equipmentTypeRouter = Router();
 const equipmentTypeController = new EquipmentTypeController();
 
 equipmentTypeRouter.get('', equipmentTypeController.list);
-// equipmentTypeRouter.get(':id', equipmentTypeController.findById);
+equipmentTypeRouter.get(':id', equipmentTypeController.findById);
 
 export default equipmentTypeRouter;
