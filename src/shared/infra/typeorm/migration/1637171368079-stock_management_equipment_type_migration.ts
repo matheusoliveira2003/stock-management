@@ -38,11 +38,11 @@ export class stockManagementEquipmentTypeMigration1637171368079 implements Migra
                 }),
             ],
         }))
+        await queryRunner.query("INSERT INTO equipment_type (type) VALUES ('Quantitative')")
+        await queryRunner.query("INSERT INTO equipment_type (type) VALUES ('Serialized')")
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query("INSERT INTO equipment_type (type) VALUES ('Quantitative')")
-        await queryRunner.query("INSERT INTO equipment_type (type) VALUES ('Serialized')")
         await queryRunner.dropTable('equipment_type')
     }
 
