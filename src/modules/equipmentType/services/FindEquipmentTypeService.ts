@@ -11,6 +11,10 @@ export default class FindEquipmentTypeService {
     ) {}
 
     public async execute(id: number): Promise<IEquipmentTypeDTO | undefined> {
-        return await this.equipmentTypeRepository.findById(id);
+        const equipmentType = await this.equipmentTypeRepository.findById(id);
+
+        if(!equipmentType) throw new Error(`Equipment Type with ID '${id}' was not found!`);
+
+        return equipmentType;
     }
 }
