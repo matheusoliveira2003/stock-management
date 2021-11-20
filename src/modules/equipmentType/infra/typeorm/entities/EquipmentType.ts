@@ -3,7 +3,7 @@ import {Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColu
 
 @Entity('equipment_type')
 export default class EquipmentType implements IEquipmentTypeDTO {
-    @PrimaryGeneratedColumn({ name: 'id_sys_default_equipment_type' })
+    @PrimaryGeneratedColumn({ name: 'id_default_equipment_type' })
     id!: number;
 
     @Column()
