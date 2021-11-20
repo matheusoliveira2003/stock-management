@@ -10,11 +10,15 @@ export default class EquipmentTypeRepository implements IEquipmentTypeRepository
         this.repository = getRepository(EquipmentType)
     }
 
-    find() {
+    find(): Promise<EquipmentType[]> {
         return this.repository.find();
     }
 
-    findById(id: number): Promise<EquipmentType | undefined> {
-        return this.repository.findOne(id);
+    async findById(id: number): Promise<EquipmentType | undefined> {
+        const equipmentType = await this.repository.findOne(id);
+
+        if(!equipmentType) throw new Error(`Equipment Type with ID '${id}' was not found.`);
+
+        return equipmentType;
     }
 }

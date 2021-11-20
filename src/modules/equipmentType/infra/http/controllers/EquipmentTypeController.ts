@@ -10,26 +10,24 @@ export default class EquipmentTypeController {
         request: Request,
         response: Response,
         next: NextFunction
-    ): Promise<EquipmentType[] | void> {
+    ): Promise<void> {
         try {
-            response.json(
-                await container.resolve(ListEquipmentTypeService).execute()
-            );
+            const service = container.resolve(ListEquipmentTypeService);
+            response.json(await service.execute());
         } catch (error) {
             next(error);
         }
     }
 
-    async findById(
+    async find(
         request: Request,
         response: Response,
         next: NextFunction
     ): Promise<EquipmentType | void> {
         try {
             const { id } = request.params;
-            response.json(
-                await container.resolve(FindEquipmentTypeService).execute(Number(id))
-            );
+            const service = container.resolve(FindEquipmentTypeService);
+            response.json(await service.execute(Number(id)));
         } catch (error) {
             next(error);
         }

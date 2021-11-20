@@ -11,6 +11,6 @@ export default class ListEquipmentTypeService {
     ) {}
 
     public async execute(): Promise<IEquipmentTypeDTO[] | []> {
-        return await this.equipmentTypeRepository.find();
+        return this.equipmentTypeRepository.find();
     }
 }
